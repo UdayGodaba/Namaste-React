@@ -1,0 +1,2 @@
+-> React is a JS Library that can be used in already existing project by just linking into a section we want to use.
+-> Other frameworks does not provide this flexibility.
