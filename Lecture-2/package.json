@@ -1,0 +1,22 @@
+{
+  "name": "lecture-2",
+  "version": "1.0.0",
+  "description": "Learning fundamentals",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UdayGodaba/Namaste-React.git"
+  },
+  "author": "Uday Godaba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UdayGodaba/Namaste-React/issues"
+  },
+  "homepage": "https://github.com/UdayGodaba/Namaste-React#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3"
+  }
+}
