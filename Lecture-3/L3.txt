@@ -1,0 +1,20 @@
+-> React.createElement will create an object with specified HTML tag, attributes and children.
+-> root = ReactDOM.createRoot(document.getElementById("root")) any changes inside react code will be visible on specified root.
+-> root.render() is going to replace everything in the specified tag with the react element passed.
+-> When the react element is rendered onto the DOM then it is converted to HTMLElement.
+
+-> JSX is HTML like syntax.
+-> JSX makes easier to write code instead of React.createElement.
+-> JSX is not directly understood by JS Engine.
+-> JSX is transpiled before it reaches the JS Engine and it is done by Babel package.
+-> JSX --> React.createElement(JS object) --> HTMLElement(after rendered).
+-> In JSX we use camelcase for writing attributes.
+-> In case of multiple lines of JSX wrap inside brackets.
+-> Inside JSX we can write JS within curly brackets.
+-> One more super feature of JSX is it takes care of cross site scripting attacks.
+
+-> Functional Component is a JS function returning some JSX.
+-> Component name should start with capital case.
+-> Inorder to render components wrap component inside <ComponentName />.
+-> Component composition is nothing but writing a component inside other component or combining smaller reusable components.
+-> We can club React element and components in anyway.
