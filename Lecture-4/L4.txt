@@ -1,0 +1,4 @@
+-> Props are nothing but passing arguments to the function.
+-> Props will be received as JS object we can use object.propName or destructure and use them.
+
+-> Config driven UI : Our website UI is driven by data.
