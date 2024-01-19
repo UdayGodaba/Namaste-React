@@ -1,0 +1,84 @@
+L1
+
+-> React is a JS Library that can be used in already existing project by just linking into a section we want to use.
+-> Other frameworks does not provide this flexibility.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+L2
+
+-> npm : It is a package manager used for javascript related development used for managing project dependencies.
+-> Devdependecies are restricted to development where as dependencies are project needs in production also.
+
+-> Caret (^): Allows patch and minor updates, not major. (^1.2.3 includes up to, but not 2.0.0)
+-> Tilde (~): Allows patch-level updates only. (~1.2.3 includes up to, but not 1.3.0) 
+
+
+-> package.json: Contains metadata about a project, including dependencies, scripts, and general configuration. It's manually edited and specifies the project's dependencies with version ranges.
+-> package-lock.json: Automatically generated file that locks the specific version of each installed package. It ensures consistent installations across different environments and prevents unexpected version changes.
+-> node_modules: Directory storing project dependencies.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+L3: JSX and Functional Components
+
+-> React.createElement will create an object with specified HTML tag, attributes and children.
+-> root = ReactDOM.createRoot(document.getElementById("root")) any changes inside react code will be visible on specified root.
+-> root.render() is going to replace everything in the specified tag with the react element passed.
+-> When the react element is rendered onto the DOM then it is converted to HTMLElement.
+
+-> JSX is HTML like syntax.
+-> JSX makes easier to write code instead of React.createElement.
+-> JSX is not directly understood by JS Engine.
+-> JSX is transpiled before it reaches the JS Engine and it is done by Babel package.
+-> JSX --> React.createElement(JS object) --> HTMLElement(after rendered).
+-> In JSX we use camelcase for writing attributes.
+-> In case of multiple lines of JSX wrap inside brackets.
+-> Inside JSX we can write JS within curly brackets.
+-> One more super feature of JSX is it takes care of cross site scripting attacks.
+
+-> Functional Component is a JS function returning some JSX.
+-> Component name should start with capital case.
+-> Inorder to render components wrap component inside <ComponentName />.
+-> Component composition is nothing but writing a component inside other component or combining smaller reusable components.
+-> We can club React element and components in anyway.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+L4: Props and how to use Functional components
+
+-> Props are nothing but passing arguments to the function.
+-> Props will be received as JS object and we can use object.propName or destructure and use them.
+
+-> Config driven UI : Our website UI is driven by data.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+L5: Hooks, Virtual DOM
+
+-> Two types of Export/Import
+
+    -> Default Export/Import
+        export default Component;
+        import Component from "path";
+
+    -> Named Export/Import
+        export const Component;
+        import { Component } from "path";
+
+-> Hooks are normal JS utility functions which provides super powers.
+-> React keeps UI layer in-sync with data layer. 
+
+UseState Hook:
+    -> Normal variables on updation UI won't change in react.
+    -> UseState Hook provides a super power state varaibles when they get updated UI also updated i.e the particular component re-redeners.
+
+-> Virtual DOM is a representation of an actual DOM as JS Object.
+
+Reconciliation Algorithm(React Fiber):
+
+    -> Doing anything on actual DOM is costly, so what react does is it maintains virtual DOM which is an JS Object.
+    -> So compairing the previous and updated objects is faster and then it makes changes of what it needs to be done.
+    -> So react does make out web app faster by efficiently doing DOM operations.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
