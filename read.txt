@@ -69,7 +69,7 @@ L5: Hooks, Virtual DOM
 -> Hooks are normal JS utility functions which provides super powers.
 -> React keeps UI layer in-sync with data layer. 
 
-UseState Hook:
+useState Hook:
     -> Normal variables on updation UI won't change in react.
     -> UseState Hook provides a super power state varaibles when they get updated UI also updated i.e the particular component re-redeners.
 
@@ -80,5 +80,44 @@ Reconciliation Algorithm(React Fiber):
     -> Doing anything on actual DOM is costly, so what react does is it maintains virtual DOM which is an JS Object.
     -> So compairing the previous and updated objects is faster and then it makes changes of what it needs to be done.
     -> So react does make out web app faster by efficiently doing DOM operations.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+L6: Hooks and rendering
+
+Monolithic Architecture:
+
+    Description: In a monolithic architecture, the entire application is developed, deployed, and scaled as a single, unified unit.
+    Characteristics:
+
+        -> Single codebase and code deployment.
+        -> All components tightly integrated into a single executable.
+        -> Scalability can be achieved by replicating the entire application.
+        -> Changes or updates may require redeploying the entire application.
+
+Microservices Architecture:
+
+    Description: In a microservices architecture, the application is broken down into smaller, independent services that communicate with each other through APIs.
+
+    Characteristics:
+        -> Distributed architecture with separate services for different functionalities.
+        -> Each service can be developed, deployed, and scaled independently.
+        -> Services communicate via well-defined APIs.
+        -> Easier to scale individual components.
+        -> Changes or updates to one service don't necessarily require changes to others.
+
+-> In two ways we can fetch required data from Api when page loads.
+
+    -> Loads --> API call --> Render
+    -> Loads --> Render whatever we can --> API call --> Render i.e populate with received data
+    -> We prefer second way for better user experience.
+
+useEffect Hook:
+
+    -> If we want to execute something after the component is rendered then we place that piece of code in useEffect Hook.
+    -> useEffect take two arguments first one is a callback function and second one is dependencies array.
+
+-> One way to improve user experience is putting shimmer UI before something loads through API request i.e a rough skeletion page that resembles how the loaded page looks like.
+-> We are rendering something based on rendering such concept is called Conditional Rendering.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
