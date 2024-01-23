@@ -134,3 +134,36 @@ useEffect Hook:
 -> Do not try to initialize a state variable with condition that will mess up the render cycle.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+L8: Class Components
+
+-> Old way of writing react but still used in industry for older projects.
+-> Similar to functional components class components also return JSX.
+
+Constructor and super():
+    
+    -> In case of class components it is a class which has method render it will return JSX.
+    -> In case of props it will be received within constructor and we need to pass it to super(props) inorder to use props with this keyword.
+    -> The super keyword in JavaScript is mostly used to access properties on an object literal or class's [[Prototype]] or to invoke a superclass's constructor.
+    -> Super() function is to call the constructor of the parent class. It is used when we need to access a few variables in the parent class. It returns an object which represents the parent class. 
+
+State varaibles in class components:
+
+    -> this.state is reserved for creating state variables and it is coded within constructor.
+    -> this.state will be initialized with an object of state variables and their initial values.
+    -> Never directly update state variables.
+    -> this.setState() take an object how to update for specific state varaible and re-renders the component.
+
+LifeCycle Methods:
+
+    -> First constructor will be called, then render method is called, then if no child then it will be mounted and componentDidMount() will be called.
+    -> componentDidMount() is used like useEffect because we want to make a API call after once initial render of component is done with whatever is possible then populate with fetched data to the component.
+    
+    Example:
+        -> If we have a parent component and multiple children components with in same level then how does LifeCycle work?
+        -> First the parent constructor and render are called as expected.
+        -> Second all the children constructor and render are called because to optimize the renders since DOM operations are costly so React batches all the render cycles of children and atlast commit of all children are done at a time.
+        -> In third phase all children are mounted then at last parent component is mounted.
+    
+    -> If an API call is made in componentDidMount() and we set the state based on fetched data then updating phase starts in which it calls render and updates DOM then makes a call to componentDidUpdate().
+    -> When the component is about to unmount just before that componentWillUnmount() call is made.
