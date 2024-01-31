@@ -1,169 +1,246 @@
 L1
 
--> React is a JS Library that can be used in already existing project by just linking into a section we want to use.
--> Other frameworks does not provide this flexibility.
+    -> React is a JS Library that can be used in already existing project by just linking into a section we want to use.
+    -> Other frameworks does not provide this flexibility.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 L2
 
--> npm : It is a package manager used for javascript related development used for managing project dependencies.
--> Devdependecies are restricted to development where as dependencies are project needs in production also.
+    -> npm : It is a package manager used for javascript related development used for managing project dependencies.
+    -> Devdependecies are restricted to development where as dependencies are project needs in production also.
 
--> Caret (^): Allows patch and minor updates, not major. (^1.2.3 includes up to, but not 2.0.0)
--> Tilde (~): Allows patch-level updates only. (~1.2.3 includes up to, but not 1.3.0) 
+    -> Caret (^): Allows patch and minor updates, not major. (^1.2.3 includes up to, but not 2.0.0)
+    -> Tilde (~): Allows patch-level updates only. (~1.2.3 includes up to, but not 1.3.0) 
 
 
--> package.json: Contains metadata about a project, including dependencies, scripts, and general configuration. It's manually edited and specifies the project's dependencies with version ranges.
--> package-lock.json: Automatically generated file that locks the specific version of each installed package. It ensures consistent installations across different environments and prevents unexpected version changes.
--> node_modules: Directory storing project dependencies.
+    -> package.json: Contains metadata about a project, including dependencies, scripts, and general configuration. It's manually edited and specifies the project's dependencies with version ranges.
+    -> package-lock.json: Automatically generated file that locks the specific version of each installed package. It ensures consistent installations across different environments and prevents unexpected version changes.
+    -> node_modules: Directory storing project dependencies.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 L3: JSX and Functional Components
 
--> React.createElement will create an object with specified HTML tag, attributes and children.
--> root = ReactDOM.createRoot(document.getElementById("root")) any changes inside react code will be visible on specified root.
--> root.render() is going to replace everything in the specified tag with the react element passed.
--> When the react element is rendered onto the DOM then it is converted to HTMLElement.
+    -> React.createElement will create an object with specified HTML tag, attributes and children.
+    -> root = ReactDOM.createRoot(document.getElementById("root")) any changes inside react code will be visible on specified root.
+    -> root.render() is going to replace everything in the specified tag with the react element passed.
+    -> When the react element is rendered onto the DOM then it is converted to HTMLElement.
 
--> JSX is HTML like syntax.
--> JSX makes easier to write code instead of React.createElement.
--> JSX is not directly understood by JS Engine.
--> JSX is transpiled before it reaches the JS Engine and it is done by Babel package.
--> JSX --> React.createElement(JS object) --> HTMLElement(after rendered).
--> In JSX we use camelcase for writing attributes.
--> In case of multiple lines of JSX wrap inside brackets.
--> Inside JSX we can write JS within curly brackets.
--> One more super feature of JSX is it takes care of cross site scripting attacks.
+    -> JSX is HTML like syntax.
+    -> JSX makes easier to write code instead of React.createElement.
+    -> JSX is not directly understood by JS Engine.
+    -> JSX is transpiled before it reaches the JS Engine and it is done by Babel package.
+    -> JSX --> React.createElement(JS object) --> HTMLElement(after rendered).
+    -> In JSX we use camelcase for writing attributes.
+    -> In case of multiple lines of JSX wrap inside brackets.
+    -> Inside JSX we can write JS within curly brackets.
+    -> One more super feature of JSX is it takes care of cross site scripting attacks.
 
--> Functional Component is a JS function returning some JSX.
--> Component name should start with capital case.
--> Inorder to render components wrap component inside <ComponentName />.
--> Component composition is nothing but writing a component inside other component or combining smaller reusable components.
--> We can club React element and components in anyway.
+    -> Functional Component is a JS function returning some JSX.
+    -> Component name should start with capital case.
+    -> Inorder to render components wrap component inside <ComponentName />.
+    -> Component composition is nothing but writing a component inside other component or combining smaller reusable components.
+    -> We can club React element and components in anyway.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 L4: Props and how to use Functional components
 
--> Props are nothing but passing arguments to the function.
--> Props will be received as JS object and we can use object.propName or destructure and use them.
+    -> Props are nothing but passing arguments to the function.
+    -> Props will be received as JS object and we can use object.propName or destructure and use them.
 
--> Config driven UI : Our website UI is driven by data.
+    -> Config driven UI : Our website UI is driven by data.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 L5: Hooks, Virtual DOM
 
--> Two types of Export/Import
+    -> Two types of Export/Import
 
-    -> Default Export/Import
-        export default Component;
-        import Component from "path";
+        -> Default Export/Import
+            export default Component;
+            import Component from "path";
 
-    -> Named Export/Import
-        export const Component;
-        import { Component } from "path";
+        -> Named Export/Import
+            export const Component;
+            import { Component } from "path";
 
--> Hooks are normal JS utility functions which provides super powers.
--> React keeps UI layer in-sync with data layer. 
+    -> Hooks are normal JS utility functions which provides super powers.
+    -> React keeps UI layer in-sync with data layer. 
 
-useState Hook:
-    -> Normal variables on updation UI won't change in react.
-    -> UseState Hook provides a super power state varaibles when they get updated UI also updated i.e the particular component re-renders.
+    useState Hook:
+        -> Normal variables on updation UI won't change in react.
+        -> UseState Hook provides a super power state varaibles when they get updated UI also updated i.e the particular component re-renders.
 
--> Virtual DOM is a representation of an actual DOM as JS Object.
+    -> Virtual DOM is a representation of an actual DOM as JS Object.
 
-Reconciliation Algorithm(React Fiber):
+    Reconciliation Algorithm(React Fiber):
 
-    -> Doing anything on actual DOM is costly, so what react does is it maintains virtual DOM which is an JS Object.
-    -> So compairing the previous and updated objects is faster and then it makes changes of what it needs to be done.
-    -> So react does make out web app faster by efficiently doing DOM operations.
+        -> Doing anything on actual DOM is costly, so what react does is it maintains virtual DOM which is an JS Object.
+        -> So compairing the previous and updated objects is faster and then it makes changes of what it needs to be done.
+        -> So react does make out web app faster by efficiently doing DOM operations.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 L6: Hooks and rendering
 
-Monolithic Architecture:
+    Monolithic Architecture:
 
-    Description: In a monolithic architecture, the entire application is developed, deployed, and scaled as a single, unified unit.
-    Characteristics:
+        Description: In a monolithic architecture, the entire application is developed, deployed, and scaled as a single, unified unit.
+        
+        Characteristics:
+            -> Single codebase and code deployment.
+            -> All components tightly integrated into a single executable.
+            -> Scalability can be achieved by replicating the entire application.
+            -> Changes or updates may require redeploying the entire application.
 
-        -> Single codebase and code deployment.
-        -> All components tightly integrated into a single executable.
-        -> Scalability can be achieved by replicating the entire application.
-        -> Changes or updates may require redeploying the entire application.
+    Microservices Architecture:
 
-Microservices Architecture:
+        Description: In a microservices architecture, the application is broken down into smaller, independent services that communicate with each other through APIs.
 
-    Description: In a microservices architecture, the application is broken down into smaller, independent services that communicate with each other through APIs.
+        Characteristics:
+            -> Distributed architecture with separate services for different functionalities.
+            -> Each service can be developed, deployed, and scaled independently.
+            -> Services communicate via well-defined APIs.
+            -> Easier to scale individual components.
+            -> Changes or updates to one service don't necessarily require changes to others.
 
-    Characteristics:
-        -> Distributed architecture with separate services for different functionalities.
-        -> Each service can be developed, deployed, and scaled independently.
-        -> Services communicate via well-defined APIs.
-        -> Easier to scale individual components.
-        -> Changes or updates to one service don't necessarily require changes to others.
+    -> In two ways we can fetch required data from Api when page loads.
 
--> In two ways we can fetch required data from Api when page loads.
+        -> Loads --> API call --> Render
+        -> Loads --> Render whatever we can --> API call --> Render i.e populate with received data
+        -> We prefer second way for better user experience.
 
-    -> Loads --> API call --> Render
-    -> Loads --> Render whatever we can --> API call --> Render i.e populate with received data
-    -> We prefer second way for better user experience.
+    useEffect Hook:
 
-useEffect Hook:
+        -> If we want to execute something after the component is rendered then we place that piece of code in useEffect Hook.
+        -> useEffect take two arguments first one is a callback function and second one is dependencies array.
 
-    -> If we want to execute something after the component is rendered then we place that piece of code in useEffect Hook.
-    -> useEffect take two arguments first one is a callback function and second one is dependencies array.
-
--> One way to improve user experience is putting shimmer UI before something loads through API request i.e a rough skeletion page that resembles how the loaded page looks like.
--> We are rendering something based on rendering such concept is called Conditional Rendering.
+    -> One way to improve user experience is putting shimmer UI before something loads through API request i.e a rough skeletion page that resembles how the loaded page looks like.
+    -> We are rendering something based on condtion such concept is called Conditional Rendering.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 L7: Routes
 
-useEffect Hook:
-    
-    -> If no dependency array then callback inside useEffect will be called everytime when component renders.
-    -> If dependency array is empty then only for the first render of component the callback in useEffect will be called.
-    -> If there are few dependencies in dependency array then with initial render it will also call callback whenever these dependencies changes.
+    useEffect Hook:
+        
+        -> If no dependency array then callback inside useEffect will be called everytime when component renders.
+        -> If dependency array is empty then only for the first render of component the callback in useEffect will be called.
+        -> If there are few dependencies in dependency array then with initial render it will also call callback whenever these dependencies changes.
 
--> Always use hooks inside functional component body.
--> Do not try to initialize a state variable with condition that will mess up the render cycle.
+    -> Always use hooks inside functional component body.
+    -> Do not try to initialize a state variable with condition that will mess up the render cycle.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 L8: Class Components
 
--> Old way of writing react but still used in industry for older projects.
--> Similar to functional components class components also return JSX.
+    -> Old way of writing react but still used in industry for older projects.
+    -> Similar to functional components class components also return JSX.
 
-Constructor and super():
-    
-    -> In case of class components it is a class which has method render it will return JSX.
-    -> In case of props it will be received within constructor and we need to pass it to super(props) inorder to use props with this keyword.
-    -> The super keyword in JavaScript is mostly used to access properties on an object literal or class's [[Prototype]] or to invoke a superclass's constructor.
-    -> Super() function is to call the constructor of the parent class. It is used when we need to access a few variables in the parent class. It returns an object which represents the parent class. 
+    Constructor and super():
+        
+        -> In case of class components it is a class which has method render it will return JSX.
+        -> In case of props it will be received within constructor and we need to pass it to super(props) inorder to use props with this keyword.
+        -> The super keyword in JavaScript is mostly used to access properties on an object literal or class's [[Prototype]] or to invoke a superclass's constructor.
+        -> Super() function is to call the constructor of the parent class. It is used when we need to access a few variables in the parent class. It returns an object which represents the parent class. 
 
-State varaibles in class components:
+    State varaibles in class components:
 
-    -> this.state is reserved for creating state variables and it is coded within constructor.
-    -> this.state will be initialized with an object of state variables and their initial values.
-    -> Never directly update state variables.
-    -> this.setState() take an object how to update for specific state varaible and re-renders the component.
+        -> this.state is reserved for creating state variables and it is coded within constructor.
+        -> this.state will be initialized with an object of state variables and their initial values.
+        -> Never directly update state variables.
+        -> this.setState() take an object how to update for specific state varaible and re-renders the component.
 
-LifeCycle Methods:
+    LifeCycle Methods:
 
-    -> First constructor will be called, then render method is called, then if no child then it will be mounted and componentDidMount() will be called.
-    -> componentDidMount() is used like useEffect because we want to make a API call after once initial render of component is done with whatever is possible then populate with fetched data to the component.
-    
+        -> First constructor will be called, then render method is called, then if no child then it will be mounted and componentDidMount() will be called.
+        -> componentDidMount() is used like useEffect because we want to make a API call after once initial render of component is done with whatever is possible then populate with fetched data to the component.
+        
+        Example:
+            -> If we have a parent component and multiple children components with in same level then how does LifeCycle work?
+            -> First the parent constructor and render are called as expected.
+            -> Second all the children constructor and render are called because to optimize the renders since DOM operations are costly so React batches all the render cycles of children and atlast commit of all children are done at a time.
+            -> In third phase all children are mounted then at last parent component is mounted.
+        
+        -> If an API call is made in componentDidMount() and we set the state based on fetched data then updating phase starts in which it calls render and updates DOM then makes a call to componentDidUpdate().
+        -> When the component is about to unmount just before that componentWillUnmount() call is made.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+L9: Performance Optimization
+
+    -> First thing is applying single responsibility principle i.e for each module/component it should be limited to single responsibility which makes it easy to test, maintain and fix if needed.
+    -> Second thing is by not loading full JS file in one go if our application is so big better to load only required chunk of JS for specific module and this way is called Lazy Loading / Dynamic Bundling / Chunking / On Demand loading etc.
+
     Example:
-        -> If we have a parent component and multiple children components with in same level then how does LifeCycle work?
-        -> First the parent constructor and render are called as expected.
-        -> Second all the children constructor and render are called because to optimize the renders since DOM operations are costly so React batches all the render cycles of children and atlast commit of all children are done at a time.
-        -> In third phase all children are mounted then at last parent component is mounted.
-    
-    -> If an API call is made in componentDidMount() and we set the state based on fetched data then updating phase starts in which it calls render and updates DOM then makes a call to componentDidUpdate().
-    -> When the component is about to unmount just before that componentWillUnmount() call is made.
+        -> Take an example of makeMyTrip which has options to book hotels, airways, buses and so on plenty of features if we load all the JS when the website loads for the first time it will make our app loading slower so it is better to load whatever is required first and then load chunks of JS when required like if I click flights JS file related to that should load so loading times are improved so the performance of our application.
+
+    -> A custom hook is a reusable piece of logic that encapsulates state management, while a regular JavaScript function for API fetch operations is typically tied to a specific component.
+
+    -> lazy returns a React component you can render in your tree. While the code for the lazy component is still loading, attempting to render it will suspend. Use <Suspense> to display a loading indicator while it’s loading.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+L11: Data Handling in React
+
+    Higher Order Components(HOC):
+
+        -> Higher-Order Components are functions that take a component and return a new enhanced component with additional behavior.
+        -> In general they are like Pure functions that always produce the same output for the same input and do not have side effects.
+
+    Controlled and Uncontrolled components:
+
+        -> Controlled components refer to the components where the state and behaviors are controlled by Parent components.
+        -> Uncontrolled components are the ones having control of their own state and manage the behaviors by themselves.
+
+    Lifting the state up:
+
+        -> Sometimes, you want the state of two components to always change together. To do it, remove state from both of them, move it to their closest common parent, and then pass it down to them via props. This is known as lifting state up.
+
+    Prop Drilling:
+
+        -> Passing props is a great way to explicitly pipe data through your UI tree to the components that use it.
+        -> But passing props can become verbose and inconvenient when you need to pass some prop deeply through the tree, or if many components need the same prop. The nearest common ancestor could be far removed from the components that need data, and lifting state up that high can lead to a situation called “prop drilling”.
+
+        Cons of Prop Drilling:
+            - Code Complexity
+            - Reduced Maintainability
+            - Performace Overhead
+            - Decreased Component Reusability : Because due to prop drilling the component will be tightly coupled to the structure of parent components.
+
+    React Context:
+
+        -> The Context API in React provides a way to share values, such as state or functions, across the component tree without the need to pass props explicitly at each level.
+        -> It consists of two main components: Provider and Consumer.
+        -> The Provider allows you to wrap a part of your component tree and make the context available to all descendants.
+        -> The Consumer allows components to subscribe to the context changes and access the provided values.
+        -> This can be particularly useful for managing global state, theme, or user authentication information within a React application.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+L12: Redux toolkit
+
+    -> While the Context API is suitable for managing state in smaller applications or for simpler use cases, Redux becomes more advantageous as the complexity of the application grows, providing a more structured and maintainable solution.
+
+    -> Redux is a seperate library not included in React.
+    -> Redux is a tool for managing the state of your web application in a clear and predictable way.
+    -> Redux Toolkit is a library that simplifies the usage of Redux in React applications. It provides a set of utilities and abstractions to streamline the development process and reduce boilerplate code. 
+    -> Redux Toolkit uses Immer internally to handle immutability. You can write reducers that look like they directly mutate the state.
+    -> In Redux Toolkit the state can directly changed/mutable(but in the background Immer takes care of it to be immutable) and no need to return like vanella Redux where the state is immutable and need to return a new immutable state to update state.
+
+    Creating:
+        -> Use configureStore to create your Redux store and combine multiple slices using the reducer configuration.
+        -> Use createSlice to define a slice of your Redux state, including its initial state, reducers, and action creators.
+
+    Usage:
+        -> Use the useDispatch hook to get the dispatch function and dispatch actions to update the state.
+        -> Use the useSelector hook to access and subscribe to the Redux state.
+
+    -> So when an action is invoked it calls an reducer function the updates the state and a state is subscribed to access from the particular slice.
+    -> The useDispatch, useSelector hooks are synchronous operations so they run on main thread.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
