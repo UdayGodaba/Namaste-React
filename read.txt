@@ -244,3 +244,50 @@ L12: Redux toolkit
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+L13: Testing React Application
+
+    Types of testing (developer side):
+
+        -> Unit Testing
+        -> Integration Testing
+        -> End to End Testing - e2e Testing
+
+    Setting up Testing Environment (if react app it will have all predefined no need to make these configurations):
+
+        -> Install React Testing Library
+        -> Install jest
+        -> Install Babel dependencies for jest and configure Babel as specified in jest docs
+        -> To avoid conflict of parcel babel with jest babel set configuration as per parcel docs which disables default babel transpilation
+        -> Set up jest config file by running -> npx jest --init
+        -> Install jsdom library it acts like a virtual browser for testing
+
+    How to write unit test cases:
+
+        JS testing:
+
+            -> First create a folder __tests__
+            -> Now create files with names FileName.test.js
+            -> Import the component which needs to be tested
+            -> Now a fuction test("", () => {}) which takes to arguments string and callback function
+            -> it/test are same just alias
+            -> Within string it contains the description and with in callback we call the function into result variable and then the expected Assertion i.e expect(result).toBe(what you are expect)
+
+        React Testing:
+
+            -> Install @babel/preset-react to make JSX work in test cases and include in babel config
+            -> Install @testing-library/jest-dom
+
+        How to Test whether a component loaded as required:
+
+            -> Firstly in test we render the component 
+                => render(<Component />);
+            -> Second we qeury what is required like tags which we want
+                => const loginButton = screen.getByRole("button", { if any specification });
+            -> Third Assertion i.e expecting 
+                => expect(loginButton).toBeInTheDocument();
+        
+        -> If multiple tests related to some component we can club them into one using describe("", () => {})
+        
+        -> As we are doing unit testing i.e isolating the component and testing it if the component has someother libraries used in it like redux, router such then import and wrap to the component which is being rendered.
+
+        -> Incase we want to test an event i.e if you make a click event then the change has happend or not then use fireEvent.specificAction to initiate the event and check it is renderd or not.
