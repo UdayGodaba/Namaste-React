@@ -50,6 +50,9 @@ L4: Props and how to use Functional components
     -> Props are nothing but passing arguments to the function.
     -> Props will be received as JS object and we can use object.propName or destructure and use them.
 
+    Note:
+        -> When we pass data to component it will received as an props object whereas incase of custom hooks the data will be just passed normally not any object such
+
     -> Config driven UI : Our website UI is driven by data.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -289,5 +292,7 @@ L13: Testing React Application
         -> If multiple tests related to some component we can club them into one using describe("", () => {})
         
         -> As we are doing unit testing i.e isolating the component and testing it if the component has someother libraries used in it like redux, router such then import and wrap to the component which is being rendered.
-
         -> Incase we want to test an event i.e if you make a click event then the change has happend or not then use fireEvent.specificAction to initiate the event and check it is renderd or not.
+        -> Incase of passing props then create a mockData and pass it then do the same unit testing.
+
+    Integration Testing:
